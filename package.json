@@ -21,7 +21,8 @@
     "standard-fix": "standard --fix",
     "now-deploy": "npm test && now --npm && now alias",
     "start": "node standalone.js",
-    "dev": "NODE_ENV=development node standalone.js"
+    "dev": "NODE_ENV=development node standalone.js",
+    "now-deploy-demo": "npm test && now --npm -E demo.env && now alias"
   },
   "keywords": [
     "Louie",
