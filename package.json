@@ -51,7 +51,7 @@
   "homepage": "https://github.com/telemark/minelev-leder",
   "now": {
     "alias": [
-      "leder.minelev.t-fk.win"
+      "leder.demo.minelev.t-fk.win"
     ],
     "type": "npm"
   },
