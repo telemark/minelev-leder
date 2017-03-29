@@ -18,5 +18,8 @@ WORKDIR "/src"
 # Install dependencies
 RUN npm install --production
 
+# Expose 8000
+EXPOSE 8000
+
 # Startup
 ENTRYPOINT npm start

@@ -1,2 +1,4 @@
 # minelev-leder
-Web frontend for MinElev
+
+Web frontend for school administration to run MinElev reports
+
