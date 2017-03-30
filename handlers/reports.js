@@ -16,7 +16,8 @@ module.exports.getWarningsSchoolReport = async (request, reply) => {
   const token = generateSystemJwt(userId)
   const url = `${config.LOGS_SERVICE_URL}/logs/search`
   const query = {
-    schoolId: schoolId
+    schoolId: schoolId,
+    documentType: 'varsel'
   }
   axios.defaults.headers.common['Authorization'] = token
 
@@ -38,7 +39,8 @@ module.exports.getFollowupsSchoolReport = async (request, reply) => {
   const token = generateSystemJwt(userId)
   const url = `${config.LOGS_SERVICE_URL}/logs/search`
   const query = {
-    schoolId: schoolId
+    schoolId: schoolId,
+    documentType: 'samtale'
   }
   axios.defaults.headers.common['Authorization'] = token
 
