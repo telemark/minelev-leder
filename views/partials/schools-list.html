@@ -3,8 +3,7 @@
         <thead>
         <tr>
             <th class="mdl-data-table__cell--non-numeric">Skole</th>
-            <th class="mdl-data-table__cell--non-numeric">Vis rapport varsler</th>
-            <th class="mdl-data-table__cell--non-numeric">Vis rapport elevsamtaler</th>
+            <th class="mdl-data-table__cell--non-numeric">Vis klasser</th>
         </tr>
         </thead>
         <tbody>
@@ -12,12 +11,7 @@
         <tr>
             <td class="mdl-data-table__cell--non-numeric">{{name}}</td>
             <td class="mdl-data-table__cell--non-numeric">
-                <a href="/reports/warnings/{{id}}" title="Vis rapport for varsler fra {{name}}" class="mdl-color-text--black">
-                    <i class="material-icons">list</i>
-                </a>
-            </td>
-            <td class="mdl-data-table__cell--non-numeric">
-                <a href="/reports/followups/{{id}}" title="Vis rapport for elevsamtaler fra {{name}}" class="mdl-color-text--black">
+                <a href="/classes/{{id}}" title="Vis klasser fra {{name}}" class="mdl-color-text--black">
                     <i class="material-icons">list</i>
                 </a>
             </td>

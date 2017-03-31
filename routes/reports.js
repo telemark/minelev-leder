@@ -13,10 +13,26 @@ module.exports = [
   },
   {
     method: 'GET',
+    path: '/reports/warnings/class/{grouplID}',
+    handler: handlers.getWarningsClassReport,
+    config: {
+      description: 'Report warnings for a spesific class'
+    }
+  },
+  {
+    method: 'GET',
     path: '/reports/followups/{schoolID}',
     handler: handlers.getFollowupsSchoolReport,
     config: {
       description: 'Report followups for a spesific school'
+    }
+  },
+  {
+    method: 'GET',
+    path: '/reports/followups/class/{groupID}',
+    handler: handlers.getFollowupsClassReport,
+    config: {
+      description: 'Report followups for a spesific class'
     }
   },
   {
