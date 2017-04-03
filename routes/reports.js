@@ -13,7 +13,7 @@ module.exports = [
   },
   {
     method: 'GET',
-    path: '/reports/warnings/class/{grouplID}',
+    path: '/reports/warnings/class/{groupID}',
     handler: handlers.getWarningsClassReport,
     config: {
       description: 'Report warnings for a spesific class'

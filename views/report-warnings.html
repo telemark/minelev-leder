@@ -4,7 +4,6 @@
         <table class="mdl-data-table mdl-js-data-table mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-shadow--2dp">
             <thead>
             <tr>
-                <th class="mdl-data-table__cell--non-numeric">Klasse</th>
                 <th class="mdl-data-table__cell--non-numeric">Navn</th>
                 <th class="mdl-data-table__cell--non-numeric">Periode</th>
                 <th class="mdl-data-table__cell--non-numeric">Angående</th>
@@ -15,7 +14,6 @@
             <tbody>
             {{#each students}}
             <tr>
-                <td class="mdl-data-table__cell--non-numeric">{{stripSchoolId studentMainGroupName}}</td>
                 <td class="mdl-data-table__cell--non-numeric">{{studentName}}</td>
                 <td class="mdl-data-table__cell--non-numeric">{{period}}</td>
                 <td class="mdl-data-table__cell--non-numeric"><strong>{{stripSchoolId category}}</strong><br/>{{{newlineToBr description}}}</td>
