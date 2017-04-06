@@ -47,11 +47,13 @@ module.exports.getWarningsClassReport = async (request, reply) => {
 
   axios.defaults.headers.common['Authorization'] = token
 
-  logger('info', ['reports', 'warnings', 'class', classId])
+  logger('info', ['reports', 'getWarningsClassReport', 'class', classId, 'userId', userId])
 
   const results = await axios.post(url, query)
 
   const report = myClasses.map(line => line.id).includes(classId) ? repackWarningsReport(results.data) : []
+
+  logger('info', ['reports', 'getWarningsClassReport', 'class', classId, 'userId', userId, 'reports', report.length])
 
   const viewOptions = createViewOptions({ credentials: request.auth.credentials, mySchools: mySchools, myClasses: myClasses, isAdmin: isAdmin, report: report })
 

@@ -5,6 +5,7 @@ const config = require('../config')
 const generateSystemJwt = require('../lib/generate-system-jwt')
 const repackStats = require('../lib/repack-stats')
 const createViewOptions = require('../lib/create-view-options')
+const logger = require('../lib/logger')
 
 module.exports.getStats = async (request, reply) => {
   const yar = request.yar
@@ -16,6 +17,8 @@ module.exports.getStats = async (request, reply) => {
   const myContactClasses = yar.get('myContactClasses') || []
 
   axios.defaults.headers.common['Authorization'] = token
+
+  logger('info', ['stats', 'getStats', 'userId', userId])
 
   const [total, schools, categories] = await Promise.all([axios.get(urlTotal), axios.get(urlSchools), axios.get(urlCategories)])
 

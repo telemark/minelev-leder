@@ -1,7 +1,7 @@
 'use strict'
 
-const logger = require('../lib/logger')
 const verifySigninJwt = require('../lib/verify-signin-jwt')
+const logger = require('../lib/logger')
 
 module.exports.doSignIn = async (request, reply) => {
   const token = request.query.jwt
@@ -9,7 +9,7 @@ module.exports.doSignIn = async (request, reply) => {
   const yar = request.yar
   try {
     const user = await verifySigninJwt(token)
-    logger('info', ['auth', 'user verified', 'userId', user.userId])
+    logger('info', ['auth', 'doSignIn', 'user verified', 'userId', user.userId])
 
     yar.set('isAdmin', user.isAdmin)
     yar.set('mySchools', user.mySchools)
@@ -23,7 +23,7 @@ module.exports.doSignIn = async (request, reply) => {
       reply.redirect('/')
     }
   } catch (error) {
-    logger('error', ['auth', 'error', error])
+    logger('error', ['auth', 'doSignIn', 'error', error])
     reply(error)
   }
 }
