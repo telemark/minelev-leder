@@ -10,5 +10,7 @@ module.exports = {
   AUTH_SERVICE_URL: process.env.AUTH_SERVICE_URL || 'https://auth.demo.t-fk.win/login',
   LOGS_SERVICE_URL: process.env.LOGS_SERVICE_URL || 'https://logs.demo.minelev.t-fk.win',
   SESSION_STORAGE_URL: process.env.SESSION_STORAGE_URL || 'https://tmp.storage.micro.t-fk.no',
-  ACCESS_GROUP: process.env.ACCESS_GROUP || 'TFK-TG-MinElevLeder'
+  ACCESS_GROUP: process.env.ACCESS_GROUP || 'TFK-TG-MinElevLeder',
+  PAPERTRAIL_HOST: process.env.PAPERTRAIL_HOST || 'logs.papertrailapp.com',
+  PAPERTRAIL_PORT: process.env.PAPERTRAIL_PORT || 12345
 }

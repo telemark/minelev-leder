@@ -47,7 +47,7 @@ module.exports.getWarningsClassReport = async (request, reply) => {
 
   axios.defaults.headers.common['Authorization'] = token
 
-  logger(['reports', 'warnings', 'class', classId])
+  logger('info', ['reports', 'warnings', 'class', classId])
 
   const results = await axios.post(url, query)
 

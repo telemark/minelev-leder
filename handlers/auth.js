@@ -9,7 +9,7 @@ module.exports.doSignIn = async (request, reply) => {
   const yar = request.yar
   try {
     const user = await verifySigninJwt(token)
-    logger(['auth', 'user verified', user.userName])
+    logger('info', ['auth', 'user verified', 'userId', user.userId])
 
     yar.set('isAdmin', user.isAdmin)
     yar.set('mySchools', user.mySchools)
@@ -23,7 +23,7 @@ module.exports.doSignIn = async (request, reply) => {
       reply.redirect('/')
     }
   } catch (error) {
-    logger(['auth', 'error', error])
+    logger('error', ['auth', 'error', error])
     reply(error)
   }
 }
