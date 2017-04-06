@@ -13,13 +13,14 @@ module.exports.getClasses = async (request, reply) => {
   const schoolId = request.params.schoolID
 
   if (myClasses.length === 0) {
-    logger('info', ['classes', 'looking up classes', schoolId])
+    logger('info', ['classes', 'getClasses', 'looking up classes', 'schoolId', schoolId, 'userId', userId])
     const selectedClasses = await resolveClasses({id: userId, schoolId: schoolId})
     const mySchoolIds = mySchools.map(school => school.id)
     myClasses = selectedClasses.filter(c => mySchoolIds.includes(c.schoolId))
+    logger('info', ['classes', 'getClasses', 'looking up classes', 'schoolId', schoolId, 'userId', userId, 'number of classes', myClasses.length])
     yar.set('myClasses', myClasses)
   } else {
-    logger('info', ['classes', 'got classes'])
+    logger('info', ['classes', 'getClasses', 'got classes', 'schoolId', schoolId, 'userId', userId])
   }
 
   let viewOptions = createViewOptions({credentials: request.auth.credentials, mySchools: mySchools, myClasses: myClasses, isAdmin: isAdmin})
