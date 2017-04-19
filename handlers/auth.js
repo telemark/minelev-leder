@@ -1,6 +1,6 @@
 'use strict'
 
-const verifySigninJwt = require('../lib/verify-signin-jwt')
+const lookupUser = require('../lib/lookup-user')
 const logger = require('../lib/logger')
 
 module.exports.doSignIn = async (request, reply) => {
@@ -8,7 +8,7 @@ module.exports.doSignIn = async (request, reply) => {
   const nextPath = request.query.nextPath
   const yar = request.yar
   try {
-    const user = await verifySigninJwt(token)
+    const user = await lookupUser(token)
     logger('info', ['auth', 'doSignIn', 'user verified', 'userId', user.userId])
 
     yar.set('isAdmin', user.isAdmin)

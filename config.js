@@ -9,6 +9,7 @@ module.exports = {
   YAR_SECRET: process.env.YAR_SECRET || 'Louie Louie, oh no, I got to go Louie Louie, oh no, I got to go',
   AUTH_SERVICE_URL: process.env.AUTH_SERVICE_URL || 'https://auth.demo.t-fk.win/login',
   LOGS_SERVICE_URL: process.env.LOGS_SERVICE_URL || 'https://logs.demo.minelev.t-fk.win',
+  USER_LOOKUP_URL: process.env.USER_LOOKUP_URL || 'https://auth.demo.t-fk.win/lookup',
   SESSION_STORAGE_URL: process.env.SESSION_STORAGE_URL || 'https://tmp.storage.micro.t-fk.no',
   ACCESS_GROUP: process.env.ACCESS_GROUP || 'TFK-TG-MinElevLeder',
   PAPERTRAIL_HOSTNAME: process.env.PAPERTRAIL_HOSTNAME || 'minelev-leder',
