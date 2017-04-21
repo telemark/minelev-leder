@@ -18,14 +18,5 @@ module.exports = [
     config: {
       description: 'Show the helppage'
     }
-  },
-  {
-    method: 'GET',
-    path: '/ping',
-    handler: (request, reply) => reply('pong'),
-    config: {
-      description: 'Search',
-      auth: false
-    }
   }
 ]

@@ -1,7 +1,7 @@
 {
   "name": "minelev-leder",
-  "version": "1.1.1",
-  "description": "web frontend for MinElev",
+  "version": "1.1.2",
+  "description": "Admin frontend for MinElev",
   "license": "MIT",
   "private": true,
   "author": {
