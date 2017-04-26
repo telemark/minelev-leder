@@ -1,5 +1,6 @@
 'use strict'
 
+const config = require('../config')
 const lookupUser = require('../lib/lookup-user')
 const verifyJwt = require('../lib/verify-jwt')
 const logger = require('../lib/logger')
@@ -38,5 +39,5 @@ module.exports.doSignIn = async (request, reply) => {
 
 module.exports.doSignOut = (request, reply) => {
   request.cookieAuth.clear()
-  reply.redirect('/')
+  reply.redirect(`${config.AUTH_SERVICE_URL}/logout`)
 }
