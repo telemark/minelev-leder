@@ -1,6 +1,6 @@
 {
   "name": "minelev-leder",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "description": "Admin frontend for MinElev",
   "license": "MIT",
   "private": true,
@@ -59,7 +59,7 @@
     "ava": "0.22.0",
     "coveralls": "2.13.1",
     "nsp": "2.8.0",
-    "nyc": "11.2.1",
+    "nyc": "11.1.0",
     "standard": "10.0.3"
   },
   "dependencies": {
