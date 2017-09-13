@@ -1,6 +1,6 @@
 {
   "name": "minelev-leder",
-  "version": "1.4.6",
+  "version": "1.4.1",
   "description": "Admin frontend for MinElev",
   "license": "MIT",
   "private": true,
@@ -11,7 +11,7 @@
   },
   "main": "index.js",
   "engines": {
-    "node": ">=8.4.0"
+    "node": ">=8.5.0"
   },
   "scripts": {
     "test": "standard && nsp check && ava",
@@ -59,7 +59,7 @@
     "ava": "0.22.0",
     "coveralls": "2.13.1",
     "nsp": "2.8.0",
-    "nyc": "11.1.0",
+    "nyc": "11.2.1",
     "standard": "10.0.3"
   },
   "dependencies": {
