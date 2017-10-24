@@ -67,3 +67,11 @@ a.logo-link {
     background-color: #ffd520;
     color: black;
 }
+
+a > i.material-icons {
+    color: black;
+}
+
+a:hover > i.material-icons  {
+    color: #007f7a;
+}

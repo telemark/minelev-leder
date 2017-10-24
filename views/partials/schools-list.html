@@ -1,17 +1,17 @@
-<div class="mdl-grid {{showMe mySchools}}">
-    <table class="mdl-data-table mdl-js-data-table mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-shadow--2dp">
+<div class="{{showMe mySchools}}">
+    <table>
         <thead>
         <tr>
-            <th class="mdl-data-table__cell--non-numeric">Skole</th>
-            <th class="mdl-data-table__cell--non-numeric">Vis klasser</th>
+            <th>Skole</th>
+            <th>Vis klasser</th>
         </tr>
         </thead>
         <tbody>
         {{#each mySchools}}
         <tr>
-            <td class="mdl-data-table__cell--non-numeric">{{name}}</td>
-            <td class="mdl-data-table__cell--non-numeric">
-                <a href="/classes/{{id}}" title="Vis klasser fra {{name}}" class="mdl-color-text--black">
+            <td>{{name}}</td>
+            <td>
+                <a href="/classes/{{id}}" title="Vis klasser fra {{name}}">
                     <i class="material-icons">list</i>
                 </a>
             </td>
