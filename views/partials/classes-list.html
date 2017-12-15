@@ -3,8 +3,8 @@
     <tr>
         <th>Skole</th>
         <th>Gruppe</th>
-        <th>Vis rapport varsler</th>
-        <th>Vis rapport elevsamtaler</th>
+        <th class="{{featureToggle features.useWarnings}}">Vis rapport varsler</th>
+        <th class="{{featureToggle features.useSamtale}}">Vis rapport elevsamtaler</th>
     </tr>
     </thead>
     <tbody>
@@ -12,12 +12,12 @@
     <tr>
         <td>{{schoolId}}</td>
         <td>{{group}}</td>
-        <td>
+        <td class="{{featureToggle ../features.useWarnings}}">
             <a href="/reports/warnings/class/{{id}}" title="Vis rapport for varsler fra {{id}}">
                 <i class="material-icons">report</i>
             </a>
         </td>
-        <td>
+        <td class="{{featureToggle ../features.useSamtale}}">
             <a href="/reports/followups/class/{{id}}" title="Vis rapport for elevsamtaler fra {{is}}">
                 <i class="material-icons">chat</i>
             </a>

@@ -1,5 +1,3 @@
-'use strict'
-
 const config = require('../config')
 const lookupUser = require('../lib/lookup-user')
 const verifyJwt = require('../lib/verify-jwt')
