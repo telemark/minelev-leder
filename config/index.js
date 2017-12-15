@@ -7,8 +7,11 @@ module.exports = {
   YAR_SECRET: process.env.YAR_SECRET || 'Louie Louie, oh no, I got to go Louie Louie, oh no, I got to go',
   AUTH_SERVICE_URL: process.env.AUTH_SERVICE_URL || 'https://auth.demo.t-fk.win',
   LOGS_SERVICE_URL: process.env.LOGS_SERVICE_URL || 'https://logs.demo.minelev.no',
+  STATS_SERVICE_URL: process.env.STATS_SERVICE_URL || 'https://logs.demo.minelev.no',
   USER_SERVICE_URL: process.env.USER_SERVICE_URL || 'https://auth.demo.t-fk.win/lookup',
   ACCESS_GROUP: process.env.ACCESS_GROUP || 'TFK-TG-MinElevLeder',
+  FEATURE_USE_WARNINGS: process.env.FEATURE_USE_WARNINGS,
+  FEATURE_USE_SAMTALER: process.env.FEATURE_USE_SAMTALER,
   PAPERTRAIL_HOSTNAME: process.env.PAPERTRAIL_HOSTNAME || 'minelev-leder',
   PAPERTRAIL_HOST: process.env.PAPERTRAIL_HOST || 'logs.papertrailapp.com',
   PAPERTRAIL_PORT: process.env.PAPERTRAIL_PORT || 12345
