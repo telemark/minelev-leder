@@ -39,5 +39,9 @@ module.exports.doSignIn = async (request, reply) => {
 
 module.exports.doSignOut = (request, reply) => {
   request.cookieAuth.clear()
-  reply.redirect(`${config.AUTH_SERVICE_URL}/logout`)
+  if (config.LOGOUT_URL) {
+    reply.redirect(`${config.LOGOUT_URL}`)
+  } else {
+    reply.redirect(`${config.AUTH_SERVICE_URL}/logout`)
+  }
 }
