@@ -1,3 +1,6 @@
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
 module.exports = {
   WEB_SERVER_PORT: process.env.WEB_SERVER_PORT || 8000,
   ORIGIN_URL: process.env.ORIGIN_URL || 'http://localhost:8000/signin',
@@ -13,6 +16,7 @@ module.exports = {
   ACCESS_GROUP: process.env.ACCESS_GROUP || 'TFK-TG-MinElevLeder',
   FEATURE_USE_WARNINGS: process.env.FEATURE_USE_WARNINGS,
   FEATURE_USE_SAMTALER: process.env.FEATURE_USE_SAMTALER,
+  FEATURE_USE_YFF: process.env.FEATURE_USE_YFF,
   PAPERTRAIL_HOSTNAME: process.env.PAPERTRAIL_HOSTNAME || 'minelev-leder',
   PAPERTRAIL_HOST: process.env.PAPERTRAIL_HOST || 'logs.papertrailapp.com',
   PAPERTRAIL_PORT: process.env.PAPERTRAIL_PORT || 12345

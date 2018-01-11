@@ -45,3 +45,6 @@ jspm_packages
 
 # Lock files
 package-lock.json
+
+# .env
+.env
