@@ -67,7 +67,7 @@
     "standard": "10.0.3"
   },
   "dependencies": {
-    "axios": "0.17.1",
+    "axios": "0.18.0",
     "dotenv": "5.0.1",
     "good": "7.3.0",
     "good-console": "7.1.0",
