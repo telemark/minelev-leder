@@ -11,7 +11,7 @@
   },
   "main": "index.js",
   "engines": {
-    "node": ">=8.9.4"
+    "node": ">=8.10.0"
   },
   "scripts": {
     "test": "standard && nsp check && ava",
@@ -21,7 +21,8 @@
     "standard-fix": "standard --fix",
     "deploy": "npm test && now && now alias",
     "start": "node standalone.js",
-    "dev": "NODE_ENV=development node standalone.js"
+    "dev": "NODE_ENV=development node standalone.js",
+    "refresh": "rm -rf node_modules && rm package-lock.json && npm install"
   },
   "keywords": [
     "Louie",
@@ -55,12 +56,12 @@
     ],
     "type": "npm",
     "engines": {
-      "node": "8.9.4"
+      "node": "8.10.0"
     },
     "dotenv": "production.env"
   },
   "devDependencies": {
-    "ava": "0.24.0",
+    "ava": "0.25.0",
     "coveralls": "3.0.0",
     "nsp": "3.2.1",
     "nyc": "11.6.0",
