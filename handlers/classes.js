@@ -1,5 +1,3 @@
-'use strict'
-
 const logger = require('../lib/logger')
 const resolveClasses = require('../lib/resolve-classes')
 const createViewOptions = require('../lib/create-view-options')
