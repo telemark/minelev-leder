@@ -1,5 +1,3 @@
-'use strict'
-
 const routes = require('./routes')
 const auth = require('./routes/auth')
 const stats = require('./routes/stats')
