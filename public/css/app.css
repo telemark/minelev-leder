@@ -32,6 +32,10 @@ a.logo-link {
     text-decoration: none;
 }
 
+hr {
+    max-width: 100% !important;
+}
+
 .top-bar, .top-bar ul {
     background-color: #ffd520;
 }

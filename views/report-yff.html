@@ -1,0 +1,15 @@
+<h1>{{stripSchoolId classId}}</h1>
+{{#each students}}
+    <h2>{{name}}</h2>
+    <p>{{classLevel}}</p>
+    <p>{{utdanningsprogram}}</p>
+    {{#each data}}
+      <h3>{{name}}</h3>
+      <ul>
+        {{#each maal}}
+          <li>{{name}}</li>
+        {{/each}}
+      </ul>
+    {{/each}}
+    <hr>
+{{/each}}

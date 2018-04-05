@@ -3,6 +3,7 @@ const config = require('../config')
 const generateSystemJwt = require('../lib/generate-system-jwt')
 const repackWarningsReport = require('../lib/repack-warnings-report')
 const repackFollowupsReport = require('../lib/repack-followups-report')
+const repackYFFReport = require('../lib/repack-yff-report')
 const createViewOptions = require('../lib/create-view-options')
 const logger = require('../lib/logger')
 
@@ -103,6 +104,29 @@ module.exports.getFollowupsClassReport = async (request, reply) => {
   const viewOptions = createViewOptions({ credentials: request.auth.credentials, mySchools: mySchools, myClasses: myClasses, isAdmin: isAdmin, report: report })
 
   reply.view('report-followups', viewOptions)
+}
+
+module.exports.getYFFClassReport = async (request, reply) => {
+  const yar = request.yar
+  const isAdmin = yar.get('isAdmin') || false
+  const mySchools = yar.get('mySchools') || []
+  const myClasses = yar.get('myClasses') || []
+  const userId = request.auth.credentials.data.userId
+  const classId = request.params.groupID
+  const token = generateSystemJwt(userId)
+  const url = `${config.LOGS_SERVICE_URL}/logs/search`
+  const query = {
+    studentMainGroupName: classId,
+    documentCategory: 'yff-lokalplan'
+  }
+  axios.defaults.headers.common['Authorization'] = token
+
+  const { data } = await axios.post(url, query)
+
+  const report = myClasses.map(line => line.id).includes(classId) ? repackYFFReport(data) : []
+
+  const viewOptions = createViewOptions({ credentials: request.auth.credentials, mySchools: mySchools, myClasses: myClasses, isAdmin: isAdmin, students: report, classId: classId })
+  reply.view('report-yff', viewOptions)
 }
 
 module.exports.showReportsPage = async (request, reply) => {

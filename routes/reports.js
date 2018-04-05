@@ -37,6 +37,14 @@ module.exports = [
   },
   {
     method: 'GET',
+    path: '/reports/yff/class/{groupID}',
+    handler: handlers.getYFFClassReport,
+    config: {
+      description: 'Report YFF for a spesific class'
+    }
+  },
+  {
+    method: 'GET',
     path: '/reports',
     handler: handlers.showReportsPage,
     config: {
