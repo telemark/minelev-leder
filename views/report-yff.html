@@ -1,17 +1,22 @@
 <h1>{{stripSchoolId classId}}</h1>
 {{#each students}}
-    <h2>{{name}}</h2>
-    <p>{{header}}</p>
-    <p>Årstimer: {{hours}}</p>
-    <p>Utdanningsprogram: {{utdanningsprogram}}</p>
-    {{#each data}}
-      <h3>Programområde: {{name}}</h3>
-      Kompetansemål for opplæringen:
-      <ul>
-        {{#each maal}}
-          <li>{{name}}</li>
-        {{/each}}
-      </ul>
-    {{/each}}
+    <div>
+      <h2>{{name}}</h2>
+      <p>{{header}}</p>
+      <p>Årstimer: {{hours}}</p>
+      <p>Utdanningsprogram: {{utdanningsprogram}}</p>
+      {{#each data}}
+        <h3>Programområde: {{name}}</h3>
+        Kompetansemål for opplæringen:
+        <ul>
+          {{#each maal}}
+            <li>{{name}}</li>
+          {{/each}}
+        </ul>
+      {{/each}}
+    </div>
+    <button class="mdl-button mdl-js-button mdl-button--colored mdl-color-text--black copy-button" onclick="copyToClipboard">Kopier kompetansebevis for {{name}}</button>
     <hr>
 {{/each}}
+<!-- Helperscript for copy -->
+<script src="/public/js/copybutton.js"></script>
