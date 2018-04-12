@@ -11,6 +11,7 @@ function copyToClipboard(e) {
   const wrapper = e.target.previousSibling.previousSibling
   str = wrapper.innerHTML
   e.target.disabled = true
+  e.target.innerHTML = 'Kopiert'
   function listener(event) {
     event.clipboardData.setData("text/html", str);
     event.clipboardData.setData("text/plain", str);
