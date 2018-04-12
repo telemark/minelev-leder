@@ -1,10 +1,12 @@
 <h1>{{stripSchoolId classId}}</h1>
 {{#each students}}
     <h2>{{name}}</h2>
-    <p>{{classLevel}}</p>
-    <p>{{utdanningsprogram}}</p>
+    <p>{{header}}</p>
+    <p>Årstimer: {{hours}}</p>
+    <p>Utdanningsprogram: {{utdanningsprogram}}</p>
     {{#each data}}
-      <h3>{{name}}</h3>
+      <h3>Programområde: {{name}}</h3>
+      Kompetansemål for opplæringen:
       <ul>
         {{#each maal}}
           <li>{{name}}</li>
