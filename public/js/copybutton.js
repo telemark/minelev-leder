@@ -1,37 +1,20 @@
 function init () {
-  var radios = document.querySelectorAll('.copy-button')
-  Array.prototype.forEach.call(radios, function(el) {
-    addListener(el, 'click', copyToClipboard)
+  var buttons = document.querySelectorAll('.copy-button')
+  var clipboard = new ClipboardJS(buttons)
+  clipboard.on('success', function(e) {
+      e.trigger.disabled = true
+      e.trigger.innerHTML = 'Kopiert'
   })
-}
-
-function copyToClipboard(e) {
-  var str = ''
-  e.preventDefault()
-  const wrapper = e.target.previousSibling.previousSibling
-  str = wrapper.innerHTML
-  e.target.disabled = true
-  e.target.innerHTML = 'Kopiert'
-  function listener(event) {
-    event.clipboardData.setData("text/html", str);
-    event.clipboardData.setData("text/plain", str);
-    event.preventDefault();
-  }
-  document.addEventListener("copy", listener);
-  document.execCommand("copy");
-  document.removeEventListener("copy", listener);
-}
-
-function addListener (element, type, func) {
-  element.removeEventListener(type, func)
-  element.addEventListener(type, func)
+  clipboard.on('error', function(e) {
+      alert('Bruk ctrl + c for å kopiere det merkede området')
+  })
 }
 
 function ready (fn) {
   if (document.readyState != 'loading'){
-    fn();
+    fn()
   } else {
-    document.addEventListener('DOMContentLoaded', fn);
+    document.addEventListener('DOMContentLoaded', fn)
   }
 }
 

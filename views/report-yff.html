@@ -1,7 +1,7 @@
 <h1>{{stripSchoolId classId}}</h1>
 {{#each students}}
-    <div>
-      <h2>{{name}}</h2>
+    <h2>{{name}}</h2>
+    <div id="komeptansebevis-{{userId}}">
       <p>{{header}}</p>
       <p>Årstimer: {{hours}}</p>
       <p>Utdanningsprogram: {{utdanningsprogram}}</p>
@@ -15,8 +15,9 @@
         </ul>
       {{/each}}
     </div>
-    <button class="button primary copy-button" onclick="copyToClipboard">Trykk for å kopiere kompetansebevis for {{name}}</button>
+    <button class="button primary copy-button" data-clipboard-target="#komeptansebevis-{{userId}}">Trykk for å kopiere kompetansebevis for {{name}}</button>
     <hr>
 {{/each}}
 <!-- Helperscript for copy -->
+<script src="/public/js/clipboard.min.js"></script>
 <script src="/public/js/copybutton.js"></script>
