@@ -50,16 +50,6 @@
     "url": "https://github.com/telemark/minelev-leder/issues"
   },
   "homepage": "https://github.com/telemark/minelev-leder#readme",
-  "now": {
-    "alias": [
-      "leder.minelev.no"
-    ],
-    "type": "npm",
-    "engines": {
-      "node": ">=10.7.0"
-    },
-    "dotenv": "production.env"
-  },
   "devDependencies": {
     "ava": "0.25.0",
     "coveralls": "3.0.2",
