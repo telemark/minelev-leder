@@ -14,8 +14,6 @@ module.exports.doSignIn = async (request, reply) => {
       const user = await lookupUser(token)
       logger('info', ['auth', 'doSignIn', 'user verified', 'userId', user.userId])
 
-      yar.set('isAdmin', user.isAdmin)
-      yar.set('mySchools', user.mySchools)
       yar.set('myClasses', [])
 
       request.cookieAuth.set({data: user, token: token})

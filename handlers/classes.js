@@ -5,8 +5,8 @@ const createViewOptions = require('../lib/create-view-options')
 module.exports.getClasses = async (request, reply) => {
   const yar = request.yar
   const userId = request.auth.credentials.data.userId
-  const isAdmin = yar.get('isAdmin') || false
-  const mySchools = yar.get('mySchools') || []
+  const isAdmin = request.auth.credentials.data.isAdmin || false
+  const mySchools = request.auth.credentials.data.mySchools || []
   let myClasses = yar.get('myClasses') || []
   const schoolId = request.params.schoolID
 

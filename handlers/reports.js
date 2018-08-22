@@ -8,9 +8,8 @@ const createViewOptions = require('../lib/create-view-options')
 const logger = require('../lib/logger')
 
 module.exports.getWarningsSchoolReport = async (request, reply) => {
-  const yar = request.yar
-  const isAdmin = yar.get('isAdmin') || false
-  const mySchools = yar.get('mySchools') || []
+  const isAdmin = request.auth.credentials.data.isAdmin || false
+  const mySchools = request.auth.credentials.data.mySchools || []
   const userId = request.auth.credentials.data.userId
   const schoolId = request.params.schoolID
   const token = generateSystemJwt(userId)
@@ -32,8 +31,8 @@ module.exports.getWarningsSchoolReport = async (request, reply) => {
 
 module.exports.getWarningsClassReport = async (request, reply) => {
   const yar = request.yar
-  const isAdmin = yar.get('isAdmin') || false
-  const mySchools = yar.get('mySchools') || []
+  const isAdmin = request.auth.credentials.data.isAdmin || false
+  const mySchools = request.auth.credentials.data.mySchools || []
   const myClasses = yar.get('myClasses') || []
   const userId = request.auth.credentials.data.userId
   const classId = request.params.groupID
@@ -60,9 +59,8 @@ module.exports.getWarningsClassReport = async (request, reply) => {
 }
 
 module.exports.getFollowupsSchoolReport = async (request, reply) => {
-  const yar = request.yar
-  const isAdmin = yar.get('isAdmin') || false
-  const mySchools = yar.get('mySchools') || []
+  const isAdmin = request.auth.credentials.data.isAdmin || false
+  const mySchools = request.auth.credentials.data.mySchools || []
   const userId = request.auth.credentials.data.userId
   const schoolId = request.params.schoolID
   const token = generateSystemJwt(userId)
@@ -84,8 +82,8 @@ module.exports.getFollowupsSchoolReport = async (request, reply) => {
 
 module.exports.getFollowupsClassReport = async (request, reply) => {
   const yar = request.yar
-  const isAdmin = yar.get('isAdmin') || false
-  const mySchools = yar.get('mySchools') || []
+  const isAdmin = request.auth.credentials.data.isAdmin || false
+  const mySchools = request.auth.credentials.data.mySchools || []
   const myClasses = yar.get('myClasses') || []
   const userId = request.auth.credentials.data.userId
   const classId = request.params.groupID
@@ -108,8 +106,8 @@ module.exports.getFollowupsClassReport = async (request, reply) => {
 
 module.exports.getYFFClassReport = async (request, reply) => {
   const yar = request.yar
-  const isAdmin = yar.get('isAdmin') || false
-  const mySchools = yar.get('mySchools') || []
+  const isAdmin = request.auth.credentials.data.isAdmin || false
+  const mySchools = request.auth.credentials.data.mySchools || []
   const myClasses = yar.get('myClasses') || []
   const userId = request.auth.credentials.data.userId
   const classId = request.params.groupID
@@ -130,9 +128,8 @@ module.exports.getYFFClassReport = async (request, reply) => {
 }
 
 module.exports.showReportsPage = async (request, reply) => {
-  const yar = request.yar
-  const isAdmin = yar.get('isAdmin') || false
-  const mySchools = yar.get('mySchools') || []
+  const isAdmin = request.auth.credentials.data.isAdmin || false
+  const mySchools = request.auth.credentials.data.mySchools || []
 
   let viewOptions = createViewOptions({credentials: request.auth.credentials, mySchools: mySchools, isAdmin: isAdmin})
 
