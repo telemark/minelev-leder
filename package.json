@@ -67,7 +67,7 @@
     "simple-encryptor": "2.0.0",
     "tfk-saksbehandling-schools-info": "2.0.12",
     "vision": "5.4.0",
-    "winston": "2.4.4",
+    "winston": "3.1.0",
     "winston-papertrail": "1.0.5",
     "yar": "9.0.2"
   }
