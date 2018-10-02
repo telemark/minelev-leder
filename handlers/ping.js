@@ -6,5 +6,5 @@ module.exports.ping = async (request, h) => {
     version: pkg.version,
     uptime: process.uptime()
   }
-  return h(result)
+  return h.response(result)
 }

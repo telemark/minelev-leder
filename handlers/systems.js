@@ -19,9 +19,9 @@ module.exports.checkSystems = async (request, h) => {
   try {
     const checks = await Promise.all(jobs)
     const results = checks.map(check => check.data)
-    return h(systems.map((site, index) => Object.assign(site, { result: results[index] })))
+    return h.response(systems.map((site, index) => Object.assign(site, { result: results[index] })))
   } catch (error) {
     logger('error', ['systems', 'checkSystems', error])
-    return h(error)
+    return h.response(error)
   }
 }
