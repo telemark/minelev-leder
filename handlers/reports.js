@@ -131,7 +131,7 @@ module.exports.showReportsPage = async (request, reply) => {
   const isAdmin = request.auth.credentials.data.isAdmin || false
   const mySchools = request.auth.credentials.data.mySchools || []
 
-  let viewOptions = createViewOptions({credentials: request.auth.credentials, mySchools: mySchools, isAdmin: isAdmin})
+  let viewOptions = createViewOptions({ credentials: request.auth.credentials, mySchools: mySchools, isAdmin: isAdmin })
 
   reply.view('index', viewOptions)
 }

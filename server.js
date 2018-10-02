@@ -32,11 +32,11 @@ const yarOptions = {
 }
 
 const plugins = [
-  {register: require('hapi-auth-cookie')},
-  {register: require('vision')},
-  {register: require('inert')},
-  {register: require('yar'), options: yarOptions},
-  {register: require('good'), options: goodOptions}
+  { register: require('hapi-auth-cookie') },
+  { register: require('vision') },
+  { register: require('inert') },
+  { register: require('yar'), options: yarOptions },
+  { register: require('good'), options: goodOptions }
 ]
 
 function endIfError (error) {

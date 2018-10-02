@@ -11,7 +11,7 @@ module.exports.getFrontpage = async (request, reply) => {
     logger('info', ['index', 'getFrontpage', 'no schools', 'userId', userId])
   }
 
-  let viewOptions = createViewOptions({credentials: request.auth.credentials, mySchools: mySchools, myClasses: myClasses, isAdmin: isAdmin})
+  let viewOptions = createViewOptions({ credentials: request.auth.credentials, mySchools: mySchools, myClasses: myClasses, isAdmin: isAdmin })
 
   reply.view('index', viewOptions)
 }
@@ -22,7 +22,7 @@ module.exports.getHelppage = (request, reply) => {
   const isAdmin = request.auth.credentials.data.isAdmin || false
   const mySchools = request.auth.credentials.data.mySchools
   const myClasses = yar.get('myClasses') || []
-  const viewOptions = createViewOptions({credentials: request.auth.credentials, mySchools: mySchools, myClasses: myClasses, isAdmin: isAdmin})
+  const viewOptions = createViewOptions({ credentials: request.auth.credentials, mySchools: mySchools, myClasses: myClasses, isAdmin: isAdmin })
 
   logger('info', ['index', 'getHelppage', 'userId', userId])
 
