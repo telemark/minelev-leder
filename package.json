@@ -9,7 +9,7 @@
     "email": "geir.gasodden@pythonia.no",
     "url": "https://github.com/zrrrzzt"
   },
-  "main": "index.js",
+  "main": "server.js",
   "engines": {
     "node": ">=10.11.0"
   },
@@ -21,7 +21,7 @@
     "standard-fix": "standard --fix",
     "deploy": "npm test && now && now alias",
     "start": "node standalone.js",
-    "dev": "NODE_ENV=development node standalone.js",
+    "dev": "NODE_ENV=development node server.js",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm install"
   },
   "keywords": [
@@ -59,20 +59,16 @@
   "dependencies": {
     "axios": "0.18.0",
     "dotenv": "6.0.0",
-    "good": "7.3.0",
-    "good-console": "7.1.0",
-    "good-squeeze": "5.1.0",
     "handlebars": "4.0.12",
-    "hapi": "16.6.3",
-    "hapi-auth-cookie": "7.1.0",
-    "hapi-auth-jwt2": "7.4.1",
-    "inert": "4.2.1",
+    "hapi": "17.6.0",
+    "hapi-auth-cookie": "9.0.0",
+    "inert": "5.1.0",
     "jsonwebtoken": "8.3.0",
     "simple-encryptor": "2.0.0",
     "tfk-saksbehandling-schools-info": "2.0.12",
-    "vision": "4.1.1",
+    "vision": "5.4.0",
     "winston": "2.4.4",
     "winston-papertrail": "1.0.5",
-    "yar": "8.1.2"
+    "yar": "9.0.2"
   }
 }

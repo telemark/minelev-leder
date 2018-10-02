@@ -1,26 +1,27 @@
-'use strict'
-
 const Hapi = require('hapi')
-const server = new Hapi.Server()
+const routes = require('./routes')
+const authRoutes = require('./routes/auth')
+const statsRoutes = require('./routes/stats')
+const reportsRoutes = require('./routes/reports')
+const classesRoutes = require('./routes/classes')
+const systemsRoutes = require('./routes/systems')
+const pingRoutes = require('./routes/ping')
 const config = require('./config')
-const louieService = require('./index')
-const validate = require('./lib/validateJWT')
 const logger = require('./lib/logger')
 
-const goodOptions = {
-  ops: {
-    interval: 900000
-  },
-  reporters: {
-    console: [{
-      module: 'good-squeeze',
-      name: 'Squeeze',
-      args: [{ log: '*', ops: '*', error: '*' }]
-    }, {
-      module: 'good-console'
-    }, 'stdout']
-  }
-}
+// Create a server with a host and port
+const server = Hapi.server({
+  port: config.WEB_SERVER_PORT
+})
+
+// Add the routes
+server.route(routes)
+server.route(authRoutes)
+server.route(statsRoutes)
+server.route(reportsRoutes)
+server.route(classesRoutes)
+server.route(systemsRoutes)
+server.route(pingRoutes)
 
 const yarOptions = {
   storeBlank: false,
@@ -32,51 +33,15 @@ const yarOptions = {
 }
 
 const plugins = [
-  { register: require('hapi-auth-cookie') },
-  { register: require('vision') },
-  { register: require('inert') },
-  { register: require('yar'), options: yarOptions },
-  { register: require('good'), options: goodOptions }
+  { plugin: require('hapi-auth-cookie') },
+  { plugin: require('vision') },
+  { plugin: require('inert') },
+  { plugin: require('yar'), options: yarOptions }
 ]
 
-function endIfError (error) {
-  if (error) {
-    logger('error', ['server', 'endIfError', error])
-    process.exit(1)
-  }
-}
-
-server.connection({
-  port: config.WEB_SERVER_PORT
-})
-
-server.register(plugins, (error) => {
-  endIfError(error)
-
-  server.auth.strategy('session', 'cookie', {
-    password: config.COOKIE_SECRET,
-    cookie: 'web-minelev-session',
-    validateFunc: validate,
-    redirectTo: `${config.AUTH_SERVICE_URL}/login?origin=${config.ORIGIN_URL}`,
-    appendNext: 'nextPath',
-    isSecure: process.env.NODE_ENV !== 'development',
-    isSameSite: 'Lax'
-  })
-
-  server.auth.default('session')
-
-  server.views({
-    engines: {
-      html: require('handlebars')
-    },
-    relativeTo: __dirname,
-    path: 'views',
-    helpersPath: 'views/helpers',
-    partialsPath: 'views/partials',
-    layoutPath: 'views/layouts',
-    layout: true,
-    compileMode: 'sync'
-  })
+// Start the server
+async function start () {
+  await server.register(plugins)
 
   server.route({
     method: 'GET',
@@ -86,35 +51,38 @@ server.register(plugins, (error) => {
         path: 'public'
       }
     },
-    config: {
+    options: {
       auth: false
     }
   })
 
-  registerRoutes()
+  server.views({
+    engines: {
+      html: require('handlebars')
+    },
+    relativeTo: __dirname,
+    path: 'templates',
+    layout: true,
+    layoutPath: 'templates/layouts',
+    helpersPath: 'templates/helpers',
+    partialsPath: 'templates/partials'
+  })
+
+  server.auth.strategy('session', 'cookie', {
+    password: config.COOKIE_SECRET,
+    cookie: 'web-minelev-session',
+    redirectTo: `${config.AUTH_SERVICE_URL}/login?origin=${config.ORIGIN_URL}`,
+    appendNext: 'nextPath',
+    isSecure: process.env.NODE_ENV !== 'development',
+    isSameSite: 'Lax'
+  })
+
+  server.auth.default('session')
+
+  await server.start()
+  logger('info', ['server', 'Server running', server.info.uri])
+}
+
+start().catch(error => {
+  logger('error', ['server', error])
 })
-
-function registerRoutes () {
-  server.register([
-    {
-      register: louieService,
-      options: {}
-    }
-  ], function (err) {
-    if (err) {
-      logger('error', ['server', 'registerRoutes', err])
-    }
-  })
-}
-
-module.exports.start = () => {
-  server.start(() => {
-    logger('info', ['server', 'start', `Server running at ${server.info.uri}`])
-  })
-}
-
-module.exports.stop = () => {
-  server.stop(() => {
-    logger('info', ['server', 'stop', 'Server stopped'])
-  })
-}

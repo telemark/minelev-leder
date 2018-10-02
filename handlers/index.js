@@ -1,7 +1,7 @@
 const logger = require('../lib/logger')
 const createViewOptions = require('../lib/create-view-options')
 
-module.exports.getFrontpage = async (request, reply) => {
+module.exports.getFrontpage = async (request, h) => {
   const yar = request.yar
   const userId = request.auth.credentials.data.userId
   const isAdmin = request.auth.credentials.data.isAdmin || false
@@ -13,10 +13,10 @@ module.exports.getFrontpage = async (request, reply) => {
 
   let viewOptions = createViewOptions({ credentials: request.auth.credentials, mySchools: mySchools, myClasses: myClasses, isAdmin: isAdmin })
 
-  reply.view('index', viewOptions)
+  return h.view('index', viewOptions)
 }
 
-module.exports.getHelppage = (request, reply) => {
+module.exports.getHelppage = async (request, h) => {
   const yar = request.yar
   const userId = request.auth.credentials.data.userId
   const isAdmin = request.auth.credentials.data.isAdmin || false
@@ -26,5 +26,5 @@ module.exports.getHelppage = (request, reply) => {
 
   logger('info', ['index', 'getHelppage', 'userId', userId])
 
-  reply.view('help', viewOptions)
+  return h.view('help', viewOptions)
 }

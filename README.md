@@ -17,5 +17,3 @@ Web frontend for school administration to run MinElev reports
 ## License
 
 [MIT](LICENSE)
-
-![Robohash image of minelev-leder](https://robots.kebabstudios.party/minelev-leder.png "Robohash image of minelev-leder")

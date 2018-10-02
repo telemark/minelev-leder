@@ -3,7 +3,7 @@ const lookupUser = require('../lib/lookup-user')
 const verifyJwt = require('../lib/verify-jwt')
 const logger = require('../lib/logger')
 
-module.exports.doSignIn = async (request, reply) => {
+module.exports.doSignIn = async (request, h) => {
   const token = request.query.jwt
   const nextPath = request.query.nextPath
   const yar = request.yar
@@ -19,25 +19,25 @@ module.exports.doSignIn = async (request, reply) => {
       request.cookieAuth.set({ data: user, token: token })
 
       if (nextPath && nextPath.length > 0) {
-        reply.redirect(nextPath)
+        return h.redirect(nextPath)
       } else {
-        reply.redirect('/')
+        return h.redirect('/')
       }
     } catch (error) {
       logger('error', ['auth', 'doSignIn', 'error', error])
-      reply(error)
+      return h(error)
     }
   } else {
     logger('error', ['auth', 'doSignIn', 'invalid token'])
-    reply(new Error('Invalid token'))
+    return h(new Error('Invalid token'))
   }
 }
 
-module.exports.doSignOut = (request, reply) => {
+module.exports.doSignOut = async (request, h) => {
   request.cookieAuth.clear()
   if (config.LOGOUT_URL) {
-    reply.redirect(`${config.LOGOUT_URL}`)
+    return h.redirect(`${config.LOGOUT_URL}`)
   } else {
-    reply.redirect(`${config.AUTH_SERVICE_URL}/logout`)
+    return h.redirect(`${config.AUTH_SERVICE_URL}/logout`)
   }
 }

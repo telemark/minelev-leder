@@ -7,7 +7,7 @@ const repackYFFReport = require('../lib/repack-yff-report')
 const createViewOptions = require('../lib/create-view-options')
 const logger = require('../lib/logger')
 
-module.exports.getWarningsSchoolReport = async (request, reply) => {
+module.exports.getWarningsSchoolReport = async (request, h) => {
   const isAdmin = request.auth.credentials.data.isAdmin || false
   const mySchools = request.auth.credentials.data.mySchools || []
   const userId = request.auth.credentials.data.userId
@@ -26,10 +26,10 @@ module.exports.getWarningsSchoolReport = async (request, reply) => {
 
   const viewOptions = createViewOptions({ credentials: request.auth.credentials, mySchools: mySchools, isAdmin: isAdmin, report: report })
 
-  reply.view('report-warnings', viewOptions)
+  return h.view('report-warnings', viewOptions)
 }
 
-module.exports.getWarningsClassReport = async (request, reply) => {
+module.exports.getWarningsClassReport = async (request, h) => {
   const yar = request.yar
   const isAdmin = request.auth.credentials.data.isAdmin || false
   const mySchools = request.auth.credentials.data.mySchools || []
@@ -55,10 +55,10 @@ module.exports.getWarningsClassReport = async (request, reply) => {
 
   const viewOptions = createViewOptions({ credentials: request.auth.credentials, mySchools: mySchools, myClasses: myClasses, isAdmin: isAdmin, report: report })
 
-  reply.view('report-warnings', viewOptions)
+  return h.view('report-warnings', viewOptions)
 }
 
-module.exports.getFollowupsSchoolReport = async (request, reply) => {
+module.exports.getFollowupsSchoolReport = async (request, h) => {
   const isAdmin = request.auth.credentials.data.isAdmin || false
   const mySchools = request.auth.credentials.data.mySchools || []
   const userId = request.auth.credentials.data.userId
@@ -77,10 +77,10 @@ module.exports.getFollowupsSchoolReport = async (request, reply) => {
 
   const viewOptions = createViewOptions({ credentials: request.auth.credentials, mySchools: mySchools, isAdmin: isAdmin, report: report })
 
-  reply.view('report-followups', viewOptions)
+  return h.view('report-followups', viewOptions)
 }
 
-module.exports.getFollowupsClassReport = async (request, reply) => {
+module.exports.getFollowupsClassReport = async (request, h) => {
   const yar = request.yar
   const isAdmin = request.auth.credentials.data.isAdmin || false
   const mySchools = request.auth.credentials.data.mySchools || []
@@ -101,10 +101,10 @@ module.exports.getFollowupsClassReport = async (request, reply) => {
 
   const viewOptions = createViewOptions({ credentials: request.auth.credentials, mySchools: mySchools, myClasses: myClasses, isAdmin: isAdmin, report: report })
 
-  reply.view('report-followups', viewOptions)
+  return h.view('report-followups', viewOptions)
 }
 
-module.exports.getYFFClassReport = async (request, reply) => {
+module.exports.getYFFClassReport = async (request, h) => {
   const yar = request.yar
   const isAdmin = request.auth.credentials.data.isAdmin || false
   const mySchools = request.auth.credentials.data.mySchools || []
@@ -124,14 +124,14 @@ module.exports.getYFFClassReport = async (request, reply) => {
   const report = myClasses.map(line => line.id).includes(classId) ? repackYFFReport(data) : []
 
   const viewOptions = createViewOptions({ credentials: request.auth.credentials, mySchools: mySchools, myClasses: myClasses, isAdmin: isAdmin, students: report, classId: classId })
-  reply.view('report-yff', viewOptions)
+  return h.view('report-yff', viewOptions)
 }
 
-module.exports.showReportsPage = async (request, reply) => {
+module.exports.showReportsPage = async (request, h) => {
   const isAdmin = request.auth.credentials.data.isAdmin || false
   const mySchools = request.auth.credentials.data.mySchools || []
 
   let viewOptions = createViewOptions({ credentials: request.auth.credentials, mySchools: mySchools, isAdmin: isAdmin })
 
-  reply.view('index', viewOptions)
+  return h.view('index', viewOptions)
 }

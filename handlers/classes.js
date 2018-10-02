@@ -2,7 +2,7 @@ const logger = require('../lib/logger')
 const resolveClasses = require('../lib/resolve-classes')
 const createViewOptions = require('../lib/create-view-options')
 
-module.exports.getClasses = async (request, reply) => {
+module.exports.getClasses = async (request, h) => {
   const yar = request.yar
   const userId = request.auth.credentials.data.userId
   const isAdmin = request.auth.credentials.data.isAdmin || false
@@ -23,5 +23,5 @@ module.exports.getClasses = async (request, reply) => {
 
   let viewOptions = createViewOptions({ credentials: request.auth.credentials, mySchools: mySchools, myClasses: myClasses, isAdmin: isAdmin })
 
-  reply.view('classes', viewOptions)
+  return h.view('classes', viewOptions)
 }
