@@ -12,7 +12,7 @@ module.exports.getClasses = async (request, h) => {
 
   if (myClasses.length === 0) {
     logger('info', ['classes', 'getClasses', 'looking up classes', 'schoolId', schoolId, 'userId', userId])
-    const selectedClasses = await resolveClasses({ id: userId, schoolId: schoolId })
+    const selectedClasses = await resolveClasses({ userId: userId, schoolId: schoolId })
     const mySchoolIds = mySchools.map(school => school.id)
     myClasses = selectedClasses.filter(c => mySchoolIds.includes(c.schoolId))
     logger('info', ['classes', 'getClasses', 'looking up classes', 'schoolId', schoolId, 'userId', userId, 'number of classes', myClasses.length])
