@@ -63,7 +63,7 @@
     "hapi": "17.7.0",
     "hapi-auth-cookie": "9.0.0",
     "inert": "5.1.2",
-    "jsonwebtoken": "8.3.0",
+    "jsonwebtoken": "8.4.0",
     "simple-encryptor": "2.0.0",
     "tfk-saksbehandling-schools-info": "2.0.12",
     "vision": "5.4.3",
