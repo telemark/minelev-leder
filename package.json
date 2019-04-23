@@ -57,16 +57,16 @@
     "standard": "12.0.1"
   },
   "dependencies": {
+    "@hapi/hapi": "18.3.1",
+    "@hapi/inert": "5.2.0",
+    "@hapi/vision": "5.5.2",
     "axios": "0.18.0",
     "dotenv": "7.0.0",
     "handlebars": "4.1.2",
-    "hapi": "18.1.0",
     "hapi-auth-cookie": "10.0.0",
-    "inert": "5.1.3",
     "jsonwebtoken": "8.5.1",
     "simple-encryptor": "2.0.0",
     "tfk-saksbehandling-schools-info": "2.0.12",
-    "vision": "5.4.4",
     "winston": "2.4.4",
     "winston-papertrail": "1.0.5",
     "yar": "9.1.0"
