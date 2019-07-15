@@ -11,7 +11,7 @@ module.exports.getFrontpage = async (request, h) => {
     logger('info', ['index', 'getFrontpage', 'no schools', 'userId', userId])
   }
 
-  let viewOptions = createViewOptions({ credentials: request.auth.credentials, mySchools: mySchools, myClasses: myClasses, isAdmin: isAdmin })
+  const viewOptions = createViewOptions({ credentials: request.auth.credentials, mySchools: mySchools, myClasses: myClasses, isAdmin: isAdmin })
 
   return h.view('index', viewOptions)
 }
