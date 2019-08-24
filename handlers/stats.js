@@ -24,7 +24,7 @@ module.exports.getStats = async (request, h) => {
   const urlCategories = `${config.STATS_SERVICE_URL}/stats/categories`
   const myContactClasses = yar.get('myContactClasses') || []
 
-  axios.defaults.headers.common['Authorization'] = token
+  axios.defaults.headers.common.Authorization = token
 
   logger('info', ['stats', 'getStats', 'userId', userId])
 

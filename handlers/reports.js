@@ -18,7 +18,7 @@ module.exports.getWarningsSchoolReport = async (request, h) => {
     schoolId: schoolId,
     documentType: 'varsel'
   }
-  axios.defaults.headers.common['Authorization'] = token
+  axios.defaults.headers.common.Authorization = token
 
   const results = await axios.post(url, query)
 
@@ -43,7 +43,7 @@ module.exports.getWarningsClassReport = async (request, h) => {
     documentType: 'varsel'
   }
 
-  axios.defaults.headers.common['Authorization'] = token
+  axios.defaults.headers.common.Authorization = token
 
   logger('info', ['reports', 'getWarningsClassReport', 'class', classId, 'userId', userId])
 
@@ -69,7 +69,7 @@ module.exports.getFollowupsSchoolReport = async (request, h) => {
     schoolId: schoolId,
     documentType: 'samtale'
   }
-  axios.defaults.headers.common['Authorization'] = token
+  axios.defaults.headers.common.Authorization = token
 
   const results = await axios.post(url, query)
 
@@ -93,7 +93,7 @@ module.exports.getFollowupsClassReport = async (request, h) => {
     studentMainGroupName: classId,
     documentType: 'samtale'
   }
-  axios.defaults.headers.common['Authorization'] = token
+  axios.defaults.headers.common.Authorization = token
 
   const results = await axios.post(url, query)
 
@@ -117,7 +117,7 @@ module.exports.getYFFClassReport = async (request, h) => {
     studentMainGroupName: classId,
     documentCategory: 'yff-lokalplan'
   }
-  axios.defaults.headers.common['Authorization'] = token
+  axios.defaults.headers.common.Authorization = token
 
   const { data } = await axios.post(url, query)
 
