@@ -99,7 +99,7 @@ module.exports.getFollowupsClassReport = async (request, h) => {
 
   const report = myClasses.map(line => line.id).includes(classId) ? repackWarningsReport(results.data) : []
 
-  const viewOptions = createViewOptions({ credentials: request.auth.credentials, mySchools: mySchools, myClasses: myClasses, isAdmin: isAdmin, report: report })
+  const viewOptions = createViewOptions({ credentials: request.auth.credentials, mySchools: mySchools, myClasses: myClasses, isAdmin: isAdmin, report: report, classId: classId })
 
   return h.view('report-followups', viewOptions)
 }
