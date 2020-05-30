@@ -65,7 +65,7 @@
     "handlebars": "4.5.3",
     "hapi-auth-cookie": "10.0.0",
     "jsonwebtoken": "8.5.1",
-    "simple-encryptor": "3.0.0",
+    "simple-encryptor": "4.0.0",
     "winston": "2.4.4",
     "winston-papertrail": "1.0.5",
     "yar": "9.1.0"
