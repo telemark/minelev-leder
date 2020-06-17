@@ -37,7 +37,7 @@ hr {
 }
 
 .top-bar, .top-bar ul {
-    background-color: #ffd520;
+    background-color: #005260;
 }
 
 .menu > li > a {
@@ -49,8 +49,8 @@ hr {
 }
 
 .button.primary {
-    background-color: #cceff4;
-    color: black;
+    background-color: #005260;
+    color: #fff;
 }
 
 .button.secondary {
@@ -68,7 +68,7 @@ hr {
 }
 
 .title-bar {
-    background-color: #ffd520;
+    background-color: #005260;
     color: black;
 }
 

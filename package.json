@@ -20,7 +20,7 @@
     "coveralls": "nyc ava && nyc report --reporter=lcov && cat coverage/lcov.info | coveralls",
     "standard-fix": "standard --fix",
     "deploy": "npm test && now --prod",
-    "start": "node standalone.js",
+    "start": "node server.js",
     "dev": "NODE_ENV=development node server.js",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm install"
   },
@@ -52,20 +52,20 @@
   "homepage": "https://github.com/telemark/minelev-leder#readme",
   "devDependencies": {
     "ava": "3.7.0",
-    "coveralls": "3.0.11",
+    "coveralls": "3.1.0",
     "nyc": "15.1.0",
-    "standard": "14.3.3"
+    "standard": "14.3.4"
   },
   "dependencies": {
-    "@hapi/hapi": "18.4.0",
+    "@hapi/hapi": "18.4.1",
     "@hapi/inert": "5.2.2",
     "@hapi/vision": "5.5.4",
-    "axios": "0.19.0",
+    "axios": "0.19.2",
     "dotenv": "8.2.0",
-    "handlebars": "4.5.3",
+    "handlebars": "4.7.6",
     "hapi-auth-cookie": "10.0.0",
     "jsonwebtoken": "8.5.1",
-    "simple-encryptor": "3.0.0",
+    "simple-encryptor": "4.0.0",
     "winston": "2.4.4",
     "winston-papertrail": "1.0.5",
     "yar": "9.1.0"
