@@ -1,4 +1,4 @@
-<h1>{{stripSchoolId classId}}</h1>
+<h1>Lokale læreplaner for {{stripSchoolId classId}}</h1>
 {{#each students}}
     <h2>{{name}}</h2>
     <div id="komeptansebevis-{{userId}}">
@@ -21,8 +21,8 @@
     <button class="button primary copy-button" data-clipboard-target="#komeptansebevis-{{userId}}">Trykk for å kopiere kompetansebevis for {{name}}</button>
     <hr>
 {{else}}
-    <p class="error">
-      Fant lokale læreplaner for <strong>{{stripSchoolId classId}}</strong>. Kom tilbake senere!
+    <p class="vt-card error">
+      Fant ingen lokale læreplaner for <strong>{{stripSchoolId classId}}</strong>. Kom tilbake senere!
     </p>
 {{/each}}
 

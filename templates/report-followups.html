@@ -1,4 +1,4 @@
-<h1>{{stripSchoolId classId}}</h1>
+<h1>Elevsamtaler for {{stripSchoolId classId}}</h1>
 {{#each report}}
     <table>
         <thead>
@@ -25,7 +25,7 @@
         </tbody>
     </table>
 {{else}}
-    <p class="error">
-      Fant elevsamtaler for <strong>{{stripSchoolId classId}}</strong> for denne perioden. Kom tilbake senere!
+    <p class="vt-card error">
+      Fant ingen elevsamtaler for <strong>{{stripSchoolId classId}}</strong> for denne perioden. Kom tilbake senere!
     </p>
 {{/each}}

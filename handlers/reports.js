@@ -24,7 +24,7 @@ module.exports.getWarningsSchoolReport = async (request, h) => {
 
   const report = mySchools.map(line => line.id).includes(schoolId) ? repackWarningsReport(results.data) : []
 
-  const viewOptions = createViewOptions({ credentials: request.auth.credentials, mySchools: mySchools, isAdmin: isAdmin, report: report })
+  const viewOptions = createViewOptions({ credentials: request.auth.credentials, mySchools: mySchools, isAdmin: isAdmin, report: report, schoolId })
 
   return h.view('report-warnings', viewOptions)
 }
@@ -53,7 +53,7 @@ module.exports.getWarningsClassReport = async (request, h) => {
 
   logger('info', ['reports', 'getWarningsClassReport', 'class', classId, 'userId', userId, 'reports', report.length])
 
-  const viewOptions = createViewOptions({ credentials: request.auth.credentials, mySchools: mySchools, myClasses: myClasses, isAdmin: isAdmin, report: report, classId: classId })
+  const viewOptions = createViewOptions({ credentials: request.auth.credentials, mySchools: mySchools, myClasses: myClasses, isAdmin: isAdmin, report: report, classId })
 
   return h.view('report-warnings', viewOptions)
 }

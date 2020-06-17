@@ -1,4 +1,4 @@
-<h1>{{stripSchoolId classId}}</h1>
+<h1>Varsler for {{stripSchoolId classId}}{{schoolId}}</h1>
 
 {{#each report}}
     <table>
@@ -24,7 +24,14 @@
         </tbody>
     </table>
 {{else}}
-    <p class="error">
-      Fant varsler for <strong>{{stripSchoolId classId}}</strong> for denne perioden. Sjekk tilbake senere!
-    </p>
+    {{#if classId}}
+        <p class="vt-card error">
+            Fant ingen varsler for <strong>{{stripSchoolId classId}}</strong> for denne perioden. Kom tilbake senere!
+        </p>
+    {{else}}
+        <p class="vt-card error">
+            Fant ingen varsler for skolen din, <strong>{{schoolId}}</strong>.<br>
+            Det kan skyldes at det enda ikke er sendt ut noen varsler dette skoleåret.
+        </p>
+    {{/if}}
 {{/each}}
