@@ -1,15 +1,16 @@
-<p class="vt-card intro vt-center">
-  <span class="title">Velkommen til MinElev Leder, {{credentials.data.userName}}!</span><br/>
-  MinElev leder gir deg som administrativt personell på skolen oversikt over varsler, elevsamtaler og lokale læreplaner i YFF. <br/>Er det noe du lurer på, sjekk ut <a href="/help">hjelpesiden.</a>
-</p>
-
 <div class="{{showMe mySchools}}">
+  <p class="vt-card intro vt-center">
+    <span class="title">Velkommen til MinElev Leder, {{credentials.data.userName}}!</span><br/>
+    MinElev leder gir deg som administrativt personell på skolen oversikt over varsler, elevsamtaler og lokale læreplaner i YFF. <br/>Er det noe du lurer på, sjekk ut <a href="/help">hjelpesiden.</a>
+  </p>
+  
   <h1>Mine skoler</h1>
 
   {{>schools-list}}
 </div>
 <div class="{{hideMe mySchools}}">
-  <p class="vt-card error">
-      Du har ingen skoler å ta ut rapporter for. Mener du dette er feil må du kontakte systemansvarlig.
+  <p class="vt-card error vt-center">
+      <span class="title">Ingen tilgang!</span><br/>
+      Hei, {{credentials.data.userName}}! Det ser ut til at du ikke har tilgang til noen skoler å hente ut rapporter for. <br/>Dersom du mener dette er feil, må du kontakte systemansvarlig.
   </p>
 </div>

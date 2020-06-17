@@ -2,56 +2,56 @@
   {
     "id": "BAMVS",
     "name": "Bamble videregående skole",
-    "accessGroup": "TFK-TG-MinElev-BAMVS"
+    "accessGroup": "TILGANG-MINELEV-LEDER-BAMVS"
   },
   {
     "id": "BOEVS",
     "name": "Bø vidaregåande skule",
-    "accessGroup": "TFK-TG-MinElev-BOEVS"
+    "accessGroup": "TILGANG-MINELEV-LEDER-BOEVS"
   },
   {
     "id": "DALVS",
     "name": "Vest-Telemark vidaregåande skule",
-    "accessGroup": "TFK-TG-MinElev-DALVS"
+    "accessGroup": "TILGANG-MINELEV-LEDER-DALVS"
   },
   {
     "id": "KLOVS",
     "name": "Hjalmar Johansen videregående skole",
-    "accessGroup": "TFK-TG-MinElev-KLOVS"
+    "accessGroup": "TILGANG-MINELEV-LEDER-KLOVS"
   },
   {
     "id": "KRAVS",
     "name": "Kragerø videregående skole",
-    "accessGroup": "TFK-TG-MinElev-KRAVS"
+    "accessGroup": "TILGANG-MINELEV-LEDER-KRAVS"
   },
   {
     "id": "NOMVS",
     "name": "Nome videregående skole",
-    "accessGroup": "TFK-TG-MinElev-NOMVS"
+    "accessGroup": "TILGANG-MINELEV-LEDER-NOMVS"
   },
   {
     "id": "NOTVS",
     "name": "Notodden videregående skole",
-    "accessGroup": "TFK-TG-MinElev-NOTVS"
+    "accessGroup": "TILGANG-MINELEV-LEDER-NOTVS"
   },
   {
     "id": "RJUVS",
     "name": "Rjukan videregående skole",
-    "accessGroup": "TFK-TG-MinElev-RJUVS"
+    "accessGroup": "TILGANG-MINELEV-LEDER-RJUVS"
   },
   {
     "id": "SKIVS",
     "name": "Skien videregående skole",
-    "accessGroup": "TFK-TG-MinElev-SKIVS"
+    "accessGroup": "TILGANG-MINELEV-LEDER-SKIVS"
   },
   {
     "id": "SKOVS",
     "name": "Skogmo videregående skole",
-    "accessGroup": "TFK-TG-MinElev-SKOVS"
+    "accessGroup": "TILGANG-MINELEV-LEDER-SKOVS"
   },
   {
     "id": "PORVS",
     "name": "Porsgrunn videregående skole",
-    "accessGroup": "TFK-TG-MinElev-PORVS"
+    "accessGroup": "TILGANG-MINELEV-LEDER-PORVS"
   }
 ]
