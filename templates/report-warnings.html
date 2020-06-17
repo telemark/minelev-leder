@@ -1,5 +1,6 @@
+<h1>{{stripSchoolId classId}}</h1>
+
 {{#each report}}
-    <h1>{{stripSchoolId id}}</h1>
     <table>
         <thead>
         <tr>
@@ -22,4 +23,8 @@
         {{/each}}
         </tbody>
     </table>
+{{else}}
+    <p class="error">
+      Fant varsler for <strong>{{stripSchoolId classId}}</strong> for denne perioden. Sjekk tilbake senere!
+    </p>
 {{/each}}

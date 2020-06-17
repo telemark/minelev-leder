@@ -20,7 +20,12 @@
     </div>
     <button class="button primary copy-button" data-clipboard-target="#komeptansebevis-{{userId}}">Trykk for å kopiere kompetansebevis for {{name}}</button>
     <hr>
+{{else}}
+    <p class="error">
+      Fant lokale læreplaner for <strong>{{stripSchoolId classId}}</strong>. Kom tilbake senere!
+    </p>
 {{/each}}
+
 <!-- Helperscript for copy -->
 <script src="/public/js/clipboard.min.js"></script>
 <script src="/public/js/copybutton.js"></script>
