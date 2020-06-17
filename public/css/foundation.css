@@ -1968,7 +1968,7 @@ textarea {
       justify-content: flex-end; }
 
 .align-center {
-  -ms-flex-pack: center;
+  -ms-flex-pack: center;grid-x grid-margin-x
       justify-content: center; }
 
 .align-justify {

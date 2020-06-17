@@ -3,10 +3,11 @@
   MinElev leder gir deg som administrativt personell på skolen oversikt over varsler, elevsamtaler og lokale læreplaner i YFF. <br/>Er det noe du lurer på, sjekk ut <a href="/help">hjelpesiden.</a>
 </p>
 
-<h1>Mine skoler</h1>
+<div class="{{showMe mySchools}}">
+  <h1>Mine skoler</h1>
 
-{{>schools-list}}
-
+  {{>schools-list}}
+</div>
 <div class="{{hideMe mySchools}}">
   <p class="vt-card error">
       Du har ingen skoler å ta ut rapporter for. Mener du dette er feil må du kontakte systemansvarlig.

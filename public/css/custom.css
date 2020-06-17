@@ -10,7 +10,14 @@ h1, h2, h3, h4, h4, h6 {
 @media print, screen and (min-width: 40em)  {
     h1, .h1 {
         font-size: 2rem;
+        line-height: 2em;
     }
+}
+
+.grid-container {
+    max-width: 120rem;
+    margin: 20px auto 0px auto;
+    padding: 0px 20px;
 }
 
 .vt-center {
@@ -30,7 +37,7 @@ h1, h2, h3, h4, h4, h6 {
     margin-bottom: 40px;
 
     width: fit-content;
-    max-width: 950px;
+    max-width: 90%;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -520,8 +527,4 @@ div.evenodd > label:nth-child(even):hover {
 ::selection {
     background: #B2DCDA;
     text-shadow: none
-}
-
-.grid-container {
-    margin-top: 20px !important;
 }
