@@ -53,7 +53,7 @@ module.exports.getWarningsClassReport = async (request, h) => {
 
   logger('info', ['reports', 'getWarningsClassReport', 'class', classId, 'userId', userId, 'reports', report.length])
 
-  const viewOptions = createViewOptions({ credentials: request.auth.credentials, mySchools: mySchools, myClasses: myClasses, isAdmin: isAdmin, report: report })
+  const viewOptions = createViewOptions({ credentials: request.auth.credentials, mySchools: mySchools, myClasses: myClasses, isAdmin: isAdmin, report: report, classId: classId })
 
   return h.view('report-warnings', viewOptions)
 }
