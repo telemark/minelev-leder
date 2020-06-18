@@ -2,56 +2,67 @@
   {
     "id": "BAMVS",
     "name": "Bamble videregående skole",
-    "accessGroup": "TILGANG-MINELEV-LEDER-BAMVS"
+    "oldAccessGroup": "TFK-TG-MinElev-BAMVS",
+    "accessGroup": "TILGANG-MINELEV-LEDER-BAV"
   },
   {
     "id": "BOEVS",
     "name": "Bø vidaregåande skule",
-    "accessGroup": "TILGANG-MINELEV-LEDER-BOEVS"
+    "oldAccessGroup": "TFK-TG-MinElev-BOEVS",
+    "accessGroup": "TILGANG-MINELEV-LEDER-BOV"
   },
   {
     "id": "DALVS",
     "name": "Vest-Telemark vidaregåande skule",
-    "accessGroup": "TILGANG-MINELEV-LEDER-DALVS"
+    "oldAccessGroup": "TFK-TG-MinElev-DALVS",
+    "accessGroup": "TILGANG-MINELEV-LEDER-VTV"
   },
   {
     "id": "KLOVS",
     "name": "Hjalmar Johansen videregående skole",
-    "accessGroup": "TILGANG-MINELEV-LEDER-KLOVS"
+    "oldAccessGroup": "TFK-TG-MinElev-KLOVS",
+    "accessGroup": "TILGANG-MINELEV-LEDER-HJV"
   },
   {
     "id": "KRAVS",
     "name": "Kragerø videregående skole",
-    "accessGroup": "TILGANG-MINELEV-LEDER-KRAVS"
+    "oldAccessGroup": "TFK-TG-MinElev-KRAVS",
+    "accessGroup": "TILGANG-MINELEV-LEDER-KRV"
   },
   {
     "id": "NOMVS",
     "name": "Nome videregående skole",
-    "accessGroup": "TILGANG-MINELEV-LEDER-NOMVS"
+    "oldAccessGroup": "TFK-TG-MinElev-NOMVS",
+    "accessGroup": "TILGANG-MINELEV-LEDER-NOMV"
   },
   {
     "id": "NOTVS",
     "name": "Notodden videregående skole",
-    "accessGroup": "TILGANG-MINELEV-LEDER-NOTVS"
+    "oldAccessGroup": "TFK-TG-MinElev-NOTVS",
+    "accessGroup": "TILGANG-MINELEV-LEDER-NOV"
   },
   {
     "id": "RJUVS",
     "name": "Rjukan videregående skole",
-    "accessGroup": "TILGANG-MINELEV-LEDER-RJUVS"
+    "oldAccessGroup": "TFK-TG-MinElev-RJUVS",
+    "accessGroup": "TILGANG-MINELEV-LEDER-RJV"
   },
   {
     "id": "SKIVS",
     "name": "Skien videregående skole",
-    "accessGroup": "TILGANG-MINELEV-LEDER-SKIVS"
+    "oldAccessGroup": "TFK-TG-MinElev-SKIVS",
+    "accessGroup": "TILGANG-MINELEV-LEDER-SKIV"
   },
   {
     "id": "SKOVS",
     "name": "Skogmo videregående skole",
-    "accessGroup": "TILGANG-MINELEV-LEDER-SKOVS"
+    "oldAccessGroup": "TFK-TG-MinElev-SKOVS",
+    "accessGroup": "TILGANG-MINELEV-LEDER-SKOV"
   },
   {
     "id": "PORVS",
     "name": "Porsgrunn videregående skole",
-    "accessGroup": "TILGANG-MINELEV-LEDER-PORVS"
+    "oldAccessGroup": "TFK-TG-MinElev-PORVS",
+    "accessGroup": "TILGANG-MINELEV-LEDER-POV"
   }
-]
+] 
