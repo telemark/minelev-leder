@@ -45,7 +45,15 @@ h1, h2, h3, h4, h4, h6 {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 2s;
 }
-  
+
+.error-page img {
+    display: block;
+    margin: 10% auto 0 auto;
+    width: 80%;
+    max-width: 400px;
+
+    opacity: 0.5;
+}
 
 .intro {
     background-color: #B2DCDA;

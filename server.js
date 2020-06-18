@@ -1,4 +1,5 @@
 const Hapi = require('@hapi/hapi')
+const createViewOptions = require('./lib/create-view-options')
 const routes = require('./routes')
 const authRoutes = require('./routes/auth')
 const statsRoutes = require('./routes/stats')
@@ -54,6 +55,21 @@ async function start () {
     options: {
       auth: false
     }
+  })
+
+  server.ext('onPreResponse', (request, reply) => {
+    const response = request.response
+
+    if (response && response.isBoom) {
+      const err = request.response
+      const errName = err.output.payload.error
+      const statusCode = err.output.payload.statusCode
+
+      const viewOptions = createViewOptions({ statusCode, errName }) || { statusCode, errName }
+      return reply.view('error', viewOptions).code(statusCode)
+    }
+
+    return reply.continue
   })
 
   server.views({
