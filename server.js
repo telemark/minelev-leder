@@ -65,6 +65,8 @@ async function start () {
       const errName = err.output.payload.error
       const statusCode = err.output.payload.statusCode
 
+      logger('info', ['server', 'returning error page', server.info.uri, statusCode, errName])
+
       const viewOptions = createViewOptions({ statusCode, errName }) || { statusCode, errName }
       return reply.view('error', viewOptions).code(statusCode)
     }
