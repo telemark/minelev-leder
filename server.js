@@ -57,15 +57,10 @@ async function start () {
     }
   })
 
-  server.ext('onPreResponse', (request, reply) => {
-    const response = request.response
-
+  server.ext('onPreResponse', ({ response }, reply) => {
     if (response && response.isBoom) {
-      const err = request.response
-      const errName = err.output.payload.error
-      const statusCode = err.output.payload.statusCode
-
-      logger('info', ['server', 'returning error page', server.info.uri, statusCode, errName])
+      const errName = response.output.payload.error
+      const statusCode = response.output.payload.statusCode
 
       const viewOptions = createViewOptions({ statusCode, errName }) || { statusCode, errName }
       return reply.view('error', viewOptions).code(statusCode)
