@@ -64,5 +64,77 @@
     "name": "Porsgrunn videregående skole",
     "oldAccessGroup": "TFK-TG-MinElev-PORVS",
     "accessGroup": "TILGANG-MINELEV-LEDER-POV"
+  },
+  {
+    "id": "FRVS",
+    "name": "Færder videregående skole",
+    "oldAccessGroup": "",
+    "accessGroup": "TILGANG-MINELEV-LEDER-FRV"
+  },
+  {
+    "id": "SVS",
+    "name": "Sande videregående skole",
+    "oldAccessGroup": "",
+    "accessGroup": "TILGANG-MINELEV-LEDER-SANV"
+  },
+  {
+    "id": "KBV",
+    "name": "Kompetansebyggeren",
+    "oldAccessGroup": "",
+    "accessGroup": "TILGANG-MINELEV-LEDER-KB"
+  },
+  {
+    "id": "GRVS",
+    "name": "Greveskogen videregående skole",
+    "oldAccessGroup": "",
+    "accessGroup": "TILGANG-MINELEV-LEDER-GRV"
+  },
+  {
+    "id": "MVS",
+    "name": "Melsom videregående skole",
+    "oldAccessGroup": "",
+    "accessGroup": "TILGANG-MINELEV-LEDER-MEV"
+  },
+  {
+    "id": "MVS-SMIH",
+    "name": "Skolen for sosiale og medisinske institusjoner",
+    "oldAccessGroup": "",
+    "accessGroup": "TILGANG-MINELEV-LEDER-SMI"
+  },
+  {
+    "id": "RVS",
+    "name": "Re videregående skole",
+    "oldAccessGroup": "",
+    "accessGroup": "TILGANG-MINELEV-LEDER-REV"
+  },
+  {
+    "id": "HVS",
+    "name": "Horten videregående skole",
+    "oldAccessGroup": "",
+    "accessGroup": "TILGANG-MINELEV-LEDER-HORV"
+  },
+  {
+    "id": "SFVS",
+    "name": "Sandefjord videregående skole",
+    "oldAccessGroup": "",
+    "accessGroup": "TILGANG-MINELEV-LEDER-SFV"
+  },
+  {
+    "id": "THVS",
+    "name": "Thor Heyerdahl videregående skole",
+    "oldAccessGroup": "",
+    "accessGroup": "TILGANG-MINELEV-LEDER-THV"
+  },
+  {
+    "id": "HLVS",
+    "name": "Holmestrand videregående skole",
+    "oldAccessGroup": "",
+    "accessGroup": "TILGANG-MINELEV-LEDER-HOLV"
+  },
+  {
+    "id": "NVS",
+    "name": "Nøtterøy videregående skole",
+    "oldAccessGroup": "",
+    "accessGroup": "TILGANG-MINELEV-LEDER-NTV"
   }
 ] 
